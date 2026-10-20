@@ -1,7 +1,3 @@
-/* ============================================================
-   MOODLINE — design tokens
-   ============================================================ */
-
 :root{
   --bg: #0e0f14;
   --surface: #16171f;
@@ -12,7 +8,6 @@
   --text-dim: #9497a6;
   --text-faint: #5c5f6d;
 
-  /* neutral accent while idle / no result yet */
   --accent: #6c7a89;
   --accent-soft: rgba(108,122,137,0.18);
 
@@ -24,7 +19,6 @@
   --ease-soft: cubic-bezier(.4,0,.2,1);
 }
 
-/* per-emotion accent palette, applied to <body data-emotion="..."> */
 body[data-emotion="sadness"]  { --accent: #5b7fde; --accent-soft: rgba(91,127,222,0.16); }
 body[data-emotion="joy"]      { --accent: #f2b705; --accent-soft: rgba(242,183,5,0.16); }
 body[data-emotion="love"]     { --accent: #e85d75; --accent-soft: rgba(232,93,117,0.16); }
@@ -32,17 +26,12 @@ body[data-emotion="anger"]    { --accent: #e4572e; --accent-soft: rgba(228,87,46
 body[data-emotion="fear"]     { --accent: #8b5fbf; --accent-soft: rgba(139,95,191,0.16); }
 body[data-emotion="surprise"] { --accent: #17bebb; --accent-soft: rgba(23,190,187,0.16); }
 
-/* fixed colors for breakdown bars, independent of current accent */
 .bar-sadness  .bar-fill{ background: #5b7fde; }
 .bar-joy      .bar-fill{ background: #f2b705; }
 .bar-love     .bar-fill{ background: #e85d75; }
 .bar-anger    .bar-fill{ background: #e4572e; }
 .bar-fear     .bar-fill{ background: #8b5fbf; }
 .bar-surprise .bar-fill{ background: #17bebb; }
-
-/* ============================================================
-   RESET / BASE
-   ============================================================ */
 
 *{ box-sizing: border-box; }
 html{ color-scheme: dark; }
@@ -62,7 +51,6 @@ body{
 
 textarea, button{ font-family: inherit; }
 
-/* subtle film-grain overlay for warmth, purely decorative */
 .grain{
   position: fixed;
   inset: 0;
@@ -75,10 +63,6 @@ textarea, button{ font-family: inherit; }
 @media (prefers-reduced-motion: reduce){
   *{ animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
 }
-
-/* ============================================================
-   LAYOUT
-   ============================================================ */
 
 .app{
   position: relative;
@@ -138,10 +122,6 @@ textarea, button{ font-family: inherit; }
 
 main{ flex: 1; }
 
-/* ============================================================
-   CONSOLE (input area + orb)
-   ============================================================ */
-
 .console{
   display: grid;
   grid-template-columns: 220px 1fr;
@@ -157,8 +137,6 @@ main{ flex: 1; }
 @media (max-width: 720px){
   .console{ grid-template-columns: 1fr; padding: 28px; gap: 28px; }
 }
-
-/* --- the orb: signature element -------------------------------- */
 
 .orb-stage{
   position: relative;
@@ -229,8 +207,6 @@ main{ flex: 1; }
   55%{ transform: scale(1.08); }
   100%{ transform: scale(1); }
 }
-
-/* --- input panel -------------------------------------------------- */
 
 .input-panel{ min-width: 0; }
 
@@ -305,10 +281,6 @@ textarea:focus{
   color: #ff8a72;
   font-family: var(--font-mono);
 }
-
-/* ============================================================
-   RESULT
-   ============================================================ */
 
 .result{
   margin-top: 32px;
@@ -413,10 +385,6 @@ textarea:focus{
   color: var(--text-faint);
   text-align: right;
 }
-
-/* ============================================================
-   FOOTER
-   ============================================================ */
 
 .footbar{
   margin-top: 40px;

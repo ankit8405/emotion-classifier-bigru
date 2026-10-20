@@ -29,9 +29,6 @@
 
   let modelReady = false;
 
-  /* ---------------------------------------------------------------
-     Health check — poll until the model is loaded
-  --------------------------------------------------------------- */
   async function checkHealth() {
     try {
       const res = await fetch("/health");
@@ -57,9 +54,6 @@
     el.serverStatusText.textContent = text;
   }
 
-  /* ---------------------------------------------------------------
-     Input handling
-  --------------------------------------------------------------- */
   el.textInput.addEventListener("input", () => {
     el.charCount.textContent = el.textInput.value.length;
     syncButtonState();
@@ -79,9 +73,6 @@
 
   el.analyzeBtn.addEventListener("click", runAnalysis);
 
-  /* ---------------------------------------------------------------
-     Analysis flow
-  --------------------------------------------------------------- */
   async function runAnalysis() {
     const text = el.textInput.value.trim();
     if (!text || !modelReady) return;
@@ -194,9 +185,6 @@
   function capitalize(s) {
     return s.charAt(0).toUpperCase() + s.slice(1);
   }
-
-  /* ---------------------------------------------------------------
-     Boot
-  --------------------------------------------------------------- */
+  
   checkHealth();
 })();
